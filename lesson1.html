@@ -12,7 +12,7 @@
 </head>
 <body class="shower list">
 <header class="caption">
-  <h1>Angular JS</h1>
+  <h1>AngularJS</h1>
 
   <p>Екатерина Орлова, Accenture</p>
 </header>
@@ -58,7 +58,6 @@
   </ul>
 </section>
 
-
 <section class="slide" id="roadmap">
   <h2>План занятия</h2>
   <ol class="double">
@@ -67,18 +66,16 @@
     <li><a href="#download">Установка и подключение</a></li>
     <li><a href="#dataBinding">Data binding</a></li>
     <li><a href="#scope">Scope</a></li>
-    <li><a href="#template">Шаблон
-    </a></li>
+    <li><a href="#template">Шаблон</a></li>
     <li><a href="#controller">Kонтроллер</a></li>
     <li><a href="#model">Mодель</a></li>
     <li><a href="#directives">Директивы</a></li>
     <li><a href="#expressions">Выражения</a></li>
     <li><a href="#expressions">Фильтры</a></li>
     <li><a href="#expressions">Выражения</a></li>
-    <li><a href="#expressions">Выражения</a></li>
+    <li><a href="#expressions">Роутинг</a></li>
   </ol>
 </section>
-
 
 <section class="slide" id="spa">
   <h2>SPA</h2>
@@ -87,7 +84,7 @@
     <li>Выполняется на стороне клиента в Web-браузере</li>
     <li>Взаимодействует с сервером через AJAX-запросы (получая шаблоны и данные в ответ на запросы)</li>
     <li>Без полной перезагрузки страницы</li>
-    <li>Примеры: Gmail, Soundcloud</li>
+    <li>Примеры: Gmail, Slack, Soundcloud</li>
   </ul>
 </section>
 
@@ -95,17 +92,15 @@
 <section class="slide" id="spa-vs-mpa">
   <h2>SPA</h2>
   <img src="i/spavsmpa.PNG">
-
 </section>
-
 
 <section class="slide" id="mvc-pic">
   <h2>MVC</h2>
 
   <p>Model-view-controller (MVC, «модель-представление-контроллер», «модель-вид-контроллер»)
     — схема использования нескольких шаблонов проектирования, с помощью которых модель приложения,
-    пользовательский интерфейс и взаимодействие с пользователем разделены на три отдельных компонента таким образом,
-    чтобы модификация одного из компонентов оказывала минимальное воздействие на остальные.</p>
+    пользовательский интерфейс и взаимодействие с пользователем разделены на три отдельных компонента
+    таким образом, чтобы модификация одного из компонентов оказывала минимальное воздействие на остальные.</p>
 </section>
 
 <section class="slide" id="mvc">
@@ -149,20 +144,18 @@
 <section class="slide" id="bootstrap">
   <h2>Как это работает</h2>
 
- <pre>
-      <code class="language-html line-numbers">
-        <xmp>
+  <script type="text/plain" class="language-markup language-html line-numbers">
+
           <head>
-            <script src="../libs/angular-1.5.3/angular.min.js">
-            </script>
+            < script src="../libs/angular-1.5.3/angular.min.js">
+            </ script>
           </head>
           <body ng-app>
           <h1> {{'Hello, ' + 'world!'}}</h1>
           </body>
-        </xmp>
-      </code>
- </pre>
-</section>
+ </script>
+
+   </section>
 
 <section class="slide" id="how-it-works">
   <h2>Как это работает</h2>
@@ -178,18 +171,17 @@
 
   <p>
     Cтатичный DOM, содержащий HTML, CSS, и специальные элементы и атрибуты Angular </p>
- <pre>
-      <code class="language-html line-numbers">
-        <xmp>
+
+  <script type="text/plain" class="language-markup language-html line-numbers">
           <ul>
             <li ng-repeat="pokemon in pokemons">
               <h1>{{pokemon.name}}</h1>
 
               <p>{{pokemon.id}}</p></li>
           </ul>
-        </xmp>
-      </code>
- </pre>
+
+
+  </script>
 
 </section>
 
@@ -317,6 +309,7 @@
 <section class="slide" id="directives4">
   <h2>Встроенные директивы</h2>
   <code>ng-click</code>
+
   <p>
     Клик-обработчик
   </p>
@@ -423,43 +416,149 @@
 </section>
 
 <section class="slide" id="filters3">
-  <h2>PRO Фильтры в контроллерах и директивах</h2>
-  <pre>
-      <code class="language-html line-numbers">
-        <xmp>
+  <h2>Фильтры в контроллерах и директивах</h2>
+  <script type="text/plain" class="language-markup language-html line-numbers">
+
           <div ng-controller="FilterController as ctrl">
             <div>
               All entries:
-              <span ng-repeat="entry in ctrl.array">{{entry.name}} </span>
+              <span ng-repeat="entry in ctrl.array"> {{entry.name}} </span>
             </div>
             <div>
               Entries that contain an "a":
-              <span ng-repeat="entry in ctrl.filteredArray">{{entry.name}} </span>
+              <span ng-repeat="entry in ctrl.filteredArray"> {{entry.name}} </span>
             </div>
           </div>
-        </xmp>
-      </code>
- </pre>
+
+  </script>
 </section>
 
 <section class="slide" id="filters4">
-  <h2>PRO Фильтры в контроллерах и директивах</h2>
-  <pre>
-  <code class="language-javascript line-numbers">
-    angular.module('FilterInControllerModule', []).
-    controller('FilterController', ['filterFilter', function FilterController(filterFilter) {
-      this.array = [
-      {name: 'Tobias'},
-      {name: 'Jeff'},
-      {name: 'Brian'},
-      {name: 'Igor'},
-      {name: 'James'},
-      {name: 'Brad'}
-      ];
-      this.filteredArray = filterFilter(this.array, 'a');
-    }]);</code>
-     </pre>
+  <h2>Фильтры в контроллерах и директивах</h2>
+
+<pre>
+      <code class="language-javascript line-numbers">
+        angular.module('FilterInControllerModule', []).
+    controller('FilterController', ['filterFilter',
+      function FilterController(filterFilter) {
+        this.array = [
+          {name: 'Tobias'},
+          {name: 'Jeff'},
+          {name: 'Brad'}
+    ];
+    this.filteredArray = filterFilter(this.array, 'a');
+    }]);
+    </code>
+</pre>
 </section>
+<section class="slide" id="route0">
+  <h2>Роутинг</h2>
+
+  <h1>Routing, маршрутизация</h1>
+</section>
+
+<section class="slide" id="route1">
+  <h2>Роутинг</h2>
+
+  <p>Маршруты в Angular задаются с помощью $routeProvider'а, который предоставляет сервис $route. Этот сервис позволяет
+    легко связывать воедино контроллеры, шаблоны представления и текущий URL браузера. Cервис $route находится в
+    отдельном модуле - ngRoute</p>
+
+  <p>Содержимое модуля ngRoute</p>
+
+  <ul>
+    <li>
+      Провайдер $routeProvider - для конфигурации маршрутов
+    </li>
+    <li>
+      Директива ngView - для вывода рендеринга представления, соответствующего маршруту
+    </li>
+    <li>
+      Сервисы $route и $routeParams - для работы с маршрутами и их параметрами, соответственно
+    </li>
+  </ul>
+
+</section>
+
+<section class="slide" id="route2">
+  <h2>Роутинг</h2>
+
+  <p>Включаем js-файл с модулем ngRoute</p>
+
+      <pre>
+    <code class="language-html line-numbers">
+      <xmp>
+        <script src=".../angular-route.min.js"></script>
+      </xmp>
+    </code>
+    </pre>
+
+</section>
+
+<section class="slide" id="route3">
+  <h2>Роутинг</h2>
+
+  <p>Внедряем модуль ngRoute в модуль нашего приложения</p>
+
+      <pre>
+<code class="language-javascript line-numbers">
+  angular.module('RoutingApp', ['ngRoute']);
+</code>
+</pre>
+
+</section>
+
+<section class="slide" id="route4">
+  <h2>Роутинг</h2>
+
+  <p>Конфигурируем маршруты</p>
+
+  <script type="text/plain" class="language-markup language-html line-numbers">
+
+  angular.module('RoutingApp', ['ngRoute'])
+  .config( ['$routeProvider', function($routeProvider) {
+  $routeProvider
+  .when('/products/:productId', {
+  templateUrl: 'ProductDetail.html',
+  controller: 'ProductDetailCtrl'
+  })
+  .otherwise({
+  redirectTo: '/'
+  });
+  }]);
+</script>
+</section>
+<section class="slide" id="route5">
+  <h2>Роутинг</h2>
+
+  <p>Задаем место для вывода результатов рендера представлений</p>
+
+      <pre>
+        <code class="language-html line-numbers">
+          <xmp>
+            <ng-view></ng-view>
+          </xmp>
+        </code>
+</pre>
+
+</section>
+
+<section class="slide" id="route6">
+  <h2>Роутинг</h2>
+
+  <p>Организуем ссылки</p>
+
+      <pre>
+        <code class="language-html line-numbers">
+          <xmp>
+            <a href="#/">Главная</a>
+            <a href="#/products/1">iPhone 7</a>
+          </xmp>
+        </code>
+</pre>
+
+</section>
+
 
 <section class="slide" id="next">
   <h2>В следующий раз:</h2>
@@ -481,10 +580,16 @@
   <h2>Практика:</h2>
 
   <p>Добавить сортировку по имени</p>
+
   <p>Добавить сортировку по весу в порядке убывания</p>
+
   <p>Добавить кнопку с фильтрацией по типу</p>
+
   <p>Вывести alert с именем покемона по клику на его картинку</p>
-  <p>Вывести имя покемонов разными цветами - синим, если водный тип, красным, если огонь, зеленым, если трава (ng-class)</p>
+
+  <p>Вывести имя покемонов разными цветами - синим, если водный тип, красным, если огонь, зеленым, если трава
+    (ng-class)</p>
+
   <p> (зачет с отличием) Вынести фильтр в контроллер (см https://docs.angularjs.org/guide/filter) </p>
 
 
