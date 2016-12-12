@@ -66,6 +66,7 @@
     <li><a href="#download">Установка и подключение</a></li>
     <li><a href="#dataBinding">Data binding</a></li>
     <li><a href="#scope">Scope</a></li>
+    <li><a href="#scope-inheritance">Наследование scope</a></li>
     <li><a href="#template">Шаблон</a></li>
     <li><a href="#controller">Kонтроллер</a></li>
     <li><a href="#model">Mодель</a></li>
@@ -73,7 +74,7 @@
     <li><a href="#expressions">Выражения</a></li>
     <li><a href="#expressions">Фильтры</a></li>
     <li><a href="#expressions">Выражения</a></li>
-    <li><a href="#expressions">Роутинг</a></li>
+    <li><a href="#route0">Роутинг</a></li>
   </ol>
 </section>
 
@@ -248,6 +249,22 @@
     <li><a
       href="http://angular-doc.herokuapp.com/guide/scope">http://angular-doc.herokuapp.com/guide/scope</a>
     </li>
+  </ul>
+</section>
+
+<section class="slide" id="scope-inheritance">
+  <h2>Наследование областей видимости</h2>
+
+  <img style="width: 600px" src="i/scopes.PNG" alt="">
+
+</section>
+
+<section class="slide" id="controlleras">
+  <h2>Controller as синтаксис</h2>
+  <ul>
+    <li>Рекомендованный синтаксис</li>
+    <li>Именованные $scope</li>
+    <li>Внедряем зависимость $scope, если нужно что-то специальное ($scope.$watch, scope.$on и т.д)</li>
   </ul>
 </section>
 
@@ -451,6 +468,7 @@
     </code>
 </pre>
 </section>
+
 <section class="slide" id="route0">
   <h2>Роутинг</h2>
 
@@ -579,11 +597,11 @@
 <section class="slide" id="homework">
   <h2>Практика:</h2>
 
-  <p>Добавить сортировку по имени, по весу в порядке убывания</p>
-  <p>Добавить кнопку с фильтрацией по типу</p>
+  <p>Добавить сортировку по имени, а также по весу в порядке убывания</p>
+  <p>Добавить дропдаун с фильтрацией по типу</p>
   <p>Вывести alert с именем покемона по клику на его картинку</p>
   <p>Вывести имя покемонов разными цветами - синим, если водный тип, красным, если огонь, зеленым, если трава</p>
-  <p> (зачет с отличием) Вынести фильтр в контроллер (см https://docs.angularjs.org/guide/filter);
+  <p> (зачет с отличием) Вынести фильтр типа в контроллер (см https://docs.angularjs.org/guide/filter);
     добавить отдельную страницу (и ее обработчик) для ошибки 404</p>
 
 
