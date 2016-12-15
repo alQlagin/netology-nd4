@@ -69,7 +69,7 @@
     <p>Передаем массив строк(имена зависимостей), потом функцию.</p>
     <pre>
       <code class="language-javascript line-numbers">
-    someModule.controller('MyController', 
+    someModule.controller('MyController',
     ['$scope', 'greeter',
      function($scope, greeter) {
     // ...
@@ -87,13 +87,13 @@
       <code class="language-javascript line-numbers">
 angular
  .module('app')
- .controller('DashboardController', 
+ .controller('DashboardController',
    DashboardController);
 
-  DashboardController.$inject = 
+  DashboardController.$inject =
    ['$location', '$routeParams', 'common', 'dataservice'];
 
- function DashboardController($location, 
+ function DashboardController($location,
         $routeParams, common, dataservice) {
   }
   </code>
@@ -118,7 +118,7 @@ angular
     <p>Модуль может иметь зависимости или быть автономным</p>
     <p>Чтобы создать модуль, нужно вызвать метод <code>.module</code> глобального объекта angularс двумя аргументами - имя модуля, а также второй аргумент - массив зависимостей (может быть пустым)</p>
     <p>Чтобы обратиться к модулю, нужно вызвать метод <code>.module</code> с одним аргументом (название). Обращаться к существующему модулю нужно при создании разных компонентов приложения - контроллеров, директив, сервисов и т.д.</p>
-    
+
 
   </section>
 
@@ -154,7 +154,7 @@ var app = angular.module('app', [
     'ngRoute',
     'app.shared',
     'app.dashboard'
-]);  </code> 
+]);  </code>
     </pre>
 
   </section>
@@ -189,7 +189,7 @@ angular.module('myApp', ['ngRoute'])
    $rootScope.$on('$routeChangeStart',
   function() {
     // If the user is NOT logged in
-    if (!AuthService.userLoggedIn()) {   
+    if (!AuthService.userLoggedIn()) {
     $location.path('/login');
             </code>
     </pre>
@@ -198,11 +198,11 @@ angular.module('myApp', ['ngRoute'])
 
   <section class="slide" id="services">
     <h2>Сервисы</h2>
-    <p>Сервисы позволяют хранить данные Модели и бизнес-логику, например, общение с сервером через HTTP. </p> 
+    <p>Сервисы позволяют хранить данные Модели и бизнес-логику, например, общение с сервером через HTTP. </p>
      <p> Все Сервисы – синглтоны, на каждую инъекцию есть только один Сервис. </p>
      <p> Создаем сервис с помощью метода .factory, этот метод может возвращать объект или функцию(можем использовать замыкания, private и public scopes).</p>
      <p> Созданный сервис передается в контроллер с помощью DI</p>
-      
+
   </section>
   <section class="slide" id="services2">
     <h2>Пример сервиса:</h2>
@@ -237,7 +237,7 @@ function dataService() {
         validate: validate
     };
     return service;
-  
+
     function save() {
     };
     function validate() {
@@ -260,7 +260,7 @@ function dataService() {
     <ng-bind></ng-bind>
     <span class="ng-bind: exp;"></span> НЕ рекомендован
   </script>
-   
+
   </section>
 
   <section class="slide" id="components">
@@ -422,6 +422,75 @@ function dataService() {
       <li>myForm.$invalid
         <li>myForm.$error.required
     </ul>
+  </section>
+
+  <header class="slide" id="ng0">
+    <h2>ngMessages</h2>
+    <h1></h1>
+  </header>
+
+
+  <section class="slide" id="ng1">
+
+    <h2>Подключение</h2>
+
+    <pre>
+<code class="language-javascript line-numbers">
+bower install angular-messages --save
+</code>
+</pre>
+
+<code class="language-html line-numbers">
+  <xmp>
+<script src="./angular-messages.js"></script>
+  </xmp>
+</code>
+
+<pre>
+<code class="language-javascript line-numbers">
+angular.module('MyApp', ['ngMessages']);
+</code>
+</pre>
+
+  </section>
+
+
+  <section class="slide" id="ng4">
+
+    <h2>Использование</h2>
+
+    <code class="language-html line-numbers">
+      <xmp>
+<div ng-messages="myForm.myField.$error">
+
+    <div ng-message="required">Обязательное поле</div>
+    <div ng-message="minlength">Значение слишком короткое</div>
+
+</div>
+      </xmp>
+    </code>
+
+  </section>
+
+  <section class="slide" id="ng4">
+
+    <h2>Улучшаем UX</h2>
+
+    <code class="language-html line-numbers">
+      <xmp>
+<div ng-messages="..." ng-if="vm.myForm.myField.$dirty">
+      </xmp>
+    </code>
+
+    <pre>
+    <code class="language-javascript line-numbers">
+      vm.formSubmit = function() {
+          ...
+          vm.myForm.$setPristine();
+      };
+    </code>
+    </pre>
+
   </section>
 
   <section class="slide" id="homework">
