@@ -2,72 +2,71 @@
 <html lang="ru">
 
 <head>
-  <title>Angular</title>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
-  <link rel="stylesheet" href="css/prism.css">
-  <link rel="stylesheet" href="css/prism-fix.css">
-  <link rel="stylesheet" href="css/netology.css">
+    <title>Angular</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/prism-fix.css">
+    <link rel="stylesheet" href="css/netology.css">
 </head>
 
 <body class="shower list">
 
-  <header class="caption">
-    <h1>Angular JS</h1>
+    <header class="caption">
+        <h1>Angular JS</h1>
 
-    <p>Екатерина Орлова, Accenture</p>
-  </header>
+        <p>Екатерина Орлова, Accenture</p>
+    </header>
 
-  <section class="slide" id="cover">
-    <h2>Angular</h2>
+    <section class="slide" id="cover">
+        <h2>Angular</h2>
 
-    <p>
-      <img src="i/orlova.JPG" alt="" class="avatar"> Екатерина Орлова
-      <span class="position">Accenture</span>
-    </p>
-  </section>
+        <p>
+            <img src="i/orlova.JPG" alt="" class="avatar"> Екатерина Орлова
+            <span class="position">Accenture</span>
+        </p>
+    </section>
 
-  <header class="slide" id="di0">
-    <h2>Внедрение зависимостей</h2>
+    <header class="slide" id="di0">
+        <h2>Внедрение зависимостей</h2>
 
-    <h1>Dependency injection</h1>
-  </header>
+        <h1>Dependency injection</h1>
+    </header>
 
-  <section class="slide" id="di1">
-    <h2>Dependency injection</h2>
-    <ul>
-      <li>Паттерн проектирования, отвечающий за получение компонентами приложения своих зависимостей</li>
-      <li>Способ улучшить структуру приложения, распределив самостоятельные части логики между различными модулями</li>
-      <li>В Angular мы используем аргументы функции, чтобы определить зависимости, и нужные сервисы будут переданы автоматически</li>
-      <li>Если забыть указать зависимость у компонента и вызвать ее, Angular выбросит ошибку</li>
+    <section class="slide" id="di1">
+        <h2>Dependency injection</h2>
+        <ul>
+            <li>Паттерн проектирования, отвечающий за получение компонентами приложения своих зависимостей</li>
+            <li>Способ улучшить структуру приложения, распределив самостоятельные части логики между различными модулями</li>
+            <li>В Angular мы используем аргументы функции, чтобы определить зависимости, и нужные сервисы будут переданы автоматически</li>
+            <li>Если забыть указать зависимость у компонента и вызвать ее, Angular выбросит ошибку</li>
 
-    </ul>
-  </section>
+        </ul>
+    </section>
 
-  <section class="slide" id="di2">
-    <h2>Неявная аннотация</h2>
+    <section class="slide" id="di2">
+        <h2>Неявная аннотация</h2>
 
-    <p>Самый простой способ захватить зависимости - это использовать названия зависимостей в качестве названий параметров метода.
-    </p>
-    <pre>
+        <p>Самый простой способ захватить зависимости - это использовать названия зависимостей в качестве названий параметров метода.
+        </p>
+        <pre>
       <code class="language-javascript line-numbers">
     function MyController($scope, greeter) {
     ...
     }
   </code>
     </pre>
-    <p>Получив метод, инжектор может узнать, какие зависимости нужно внедрить, исследуя объявление метода и выделяя названия
-      параметров. В коде выше $scope и greeter являются сервисами, которые нужно внедрить в метод.</p>
+        <p>Получив метод, инжектор может узнать, какие зависимости нужно внедрить, исследуя объявление метода и выделяя названия параметров. В коде выше $scope и greeter являются сервисами, которые нужно внедрить в метод.</p>
 
-  </section>
+    </section>
 
-  <section class="slide" id="di3">
-    <h2>Inline Array Annotation</h2>
+    <section class="slide" id="di3">
+        <h2>Inline Array Annotation</h2>
 
-    <p>Передаем массив строк(имена зависимостей), потом функцию.</p>
-    <pre>
+        <p>Передаем массив строк(имена зависимостей), потом функцию.</p>
+        <pre>
       <code class="language-javascript line-numbers">
     someModule.controller('MyController',
     ['$scope', 'greeter',
@@ -77,13 +76,13 @@
   </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="di25">
-    <h2>Аннотация $inject</h2>
+    <section class="slide" id="di25">
+        <h2>Аннотация $inject</h2>
 
-    <p>Используем сервис $inject, чтобы передать зависимости</p>
-    <pre>
+        <p>Используем сервис $inject, чтобы передать зависимости</p>
+        <pre>
       <code class="language-javascript line-numbers">
 angular
  .module('app')
@@ -99,54 +98,54 @@ angular
   </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="di4">
-    <h2>ngAnnotate</h2>
+    <section class="slide" id="di4">
+        <h2>ngAnnotate</h2>
 
-    <p>Чтобы использовать первый способ с минификацией кода, можно использовать ngAnnotate.</p>
-    <p>ngAnnotate автоматически приведет первый вариант к третьему, и зависимости будут сохранены при минификации</p>
-    <p>Есть модули для grunt, gulp, browserify и т.п.</p>
-
-
-  </section>
-
-  <section class="slide" id="modules">
-    <h2>Модули</h2>
-
-    <p>Приложения Angular состоят из модулей.</p>
-    <p>Модуль может иметь зависимости или быть автономным</p>
-    <p>Чтобы создать модуль, нужно вызвать метод <code>.module</code> глобального объекта angularс двумя аргументами - имя модуля, а также второй аргумент - массив зависимостей (может быть пустым)</p>
-    <p>Чтобы обратиться к модулю, нужно вызвать метод <code>.module</code> с одним аргументом (название). Обращаться к существующему модулю нужно при создании разных компонентов приложения - контроллеров, директив, сервисов и т.д.</p>
+        <p>Чтобы использовать первый способ с минификацией кода, можно использовать ngAnnotate.</p>
+        <p>ngAnnotate автоматически приведет первый вариант к третьему, и зависимости будут сохранены при минификации</p>
+        <p>Есть модули для grunt, gulp, browserify и т.п.</p>
 
 
-  </section>
+    </section>
 
-   <section class="slide" id="modules2">
-    <h2>Примеры</h2>
+    <section class="slide" id="modules">
+        <h2>Модули</h2>
 
-    <p>Сеттер:</p>
-    <pre>
+        <p>Приложения Angular состоят из модулей.</p>
+        <p>Модуль может иметь зависимости или быть автономным</p>
+        <p>Чтобы создать модуль, нужно вызвать метод <code>.module</code> глобального объекта angularс двумя аргументами - имя модуля, а также второй аргумент - массив зависимостей (может быть пустым)</p>
+        <p>Чтобы обратиться к модулю, нужно вызвать метод <code>.module</code> с одним аргументом (название). Обращаться к существующему модулю нужно при создании разных компонентов приложения - контроллеров, директив, сервисов и т.д.</p>
+
+
+    </section>
+
+    <section class="slide" id="modules2">
+        <h2>Примеры</h2>
+
+        <p>Сеттер:</p>
+        <pre>
       <code class="language-javascript line-numbers">
    angular.module('app', []);
   </code>
     </pre>
 
-    <p>Геттер:</p>
-    <pre>
+        <p>Геттер:</p>
+        <pre>
       <code class="language-javascript line-numbers">
    angular.module('app');
   </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="module3">
-    <h2>Модули</h2>
+    <section class="slide" id="module3">
+        <h2>Модули</h2>
 
-    <p>Модули могут храниться и вызываться и через переменную, однако стайлгайды рекомендуют использовать chaining синтаксис.</p>
+        <p>Модули могут храниться и вызываться и через переменную, однако стайлгайды рекомендуют использовать chaining синтаксис.</p>
 
-<pre>
+        <pre>
       <code class="language-javascript line-numbers">
 /* avoid */
 var app = angular.module('app', [
@@ -157,13 +156,13 @@ var app = angular.module('app', [
 ]);  </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="module4">
-    <h2>Модули</h2>
-    <p>Модули могут храниться и вызываться и через переменную, однако стайлгайды рекомендуют использовать chaining синтаксис. Это касается геттеров и сеттеров.</p>
+    <section class="slide" id="module4">
+        <h2>Модули</h2>
+        <p>Модули могут храниться и вызываться и через переменную, однако стайлгайды рекомендуют использовать chaining синтаксис. Это касается геттеров и сеттеров.</p>
 
-<pre>
+        <pre>
       <code class="language-javascript line-numbers">
 /* recommended */
 angular
@@ -176,13 +175,13 @@ angular
       </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="module5">
-    <h2>.run</h2>
-    <p>Модули предоставляют метод <code>.run</code>, по существу напоминающий main-метод. В run-блоках мы запускаем функционал, глобальный для аппа - например, обработчики неавторизованных запросов, или роутинг-событий </p>
+    <section class="slide" id="module5">
+        <h2>.run</h2>
+        <p>Модули предоставляют метод <code>.run</code>, по существу напоминающий main-метод. В run-блоках мы запускаем функционал, глобальный для аппа - например, обработчики неавторизованных запросов, или роутинг-событий </p>
 
-<pre>
+        <pre>
       <code class="language-javascript line-numbers">
 angular.module('myApp', ['ngRoute'])
 .run(function($rootScope, AuthService) {
@@ -194,20 +193,20 @@ angular.module('myApp', ['ngRoute'])
             </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="services">
-    <h2>Сервисы</h2>
-    <p>Сервисы позволяют хранить данные Модели и бизнес-логику, например, общение с сервером через HTTP. </p>
-     <p> Все Сервисы – синглтоны, на каждую инъекцию есть только один Сервис. </p>
-     <p> Создаем сервис с помощью метода .factory, этот метод может возвращать объект или функцию(можем использовать замыкания, private и public scopes).</p>
-     <p> Созданный сервис передается в контроллер с помощью DI</p>
+    <section class="slide" id="services">
+        <h2>Сервисы</h2>
+        <p>Сервисы позволяют хранить данные Модели и бизнес-логику, например, общение с сервером через HTTP. </p>
+        <p> Все Сервисы – синглтоны, на каждую инъекцию есть только один Сервис. </p>
+        <p> Создаем сервис с помощью метода .factory, этот метод может возвращать объект или функцию(можем использовать замыкания, private и public scopes).</p>
+        <p> Созданный сервис передается в контроллер с помощью DI</p>
 
-  </section>
-  <section class="slide" id="services2">
-    <h2>Пример сервиса:</h2>
+    </section>
+    <section class="slide" id="services2">
+        <h2>Пример сервиса:</h2>
 
-<pre>
+        <pre>
       <code class="language-javascript line-numbers">
 
     // factory
@@ -225,9 +224,9 @@ function logger() {
       </code>
     </pre>
 
-  </section>
-  <section class="slide" id="services3">
-<pre>
+    </section>
+    <section class="slide" id="services3">
+        <pre>
       <code class="language-javascript line-numbers">
 function dataService() {
     var someValue = '';
@@ -246,30 +245,29 @@ function dataService() {
       </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="dir1">
-    <h2>Директивы</h2>
+    <section class="slide" id="dir1">
+        <h2>Директивы</h2>
 
-    <p>Директивы — это расширение HTML для манипуляции DOM, обработки событий, создания компонентов. Директивы могут быть размещены в названиях элементов, атрибутах, именах классов и даже в комментариях. Style
-      guide рекомендует первые два варианта</p>
-          <p> Регистрируются с помощью метода <code>.directive</code></p>
-          <p>
-    <script type="text/plain" class="language-markup language-html line-numbers">
-    <span ng-bind="exp"></span>
-    <ng-bind></ng-bind>
-    <span class="ng-bind: exp;"></span> НЕ рекомендован
-  </script>
+        <p>Директивы — это расширение HTML для манипуляции DOM, обработки событий, создания компонентов. Директивы могут быть размещены в названиях элементов, атрибутах, именах классов и даже в комментариях. Style guide рекомендует первые два варианта</p>
+        <p> Регистрируются с помощью метода <code>.directive</code></p>
+        <p>
+            <script type="text/plain" class="language-markup language-html line-numbers">
+                <span ng-bind="exp"></span>
+                <ng-bind></ng-bind>
+                <span class="ng-bind: exp;"></span> НЕ рекомендован
+            </script>
 
-  </section>
+    </section>
 
-  <section class="slide" id="components">
-    <h2>Компоненты</h2>
+    <section class="slide" id="components">
+        <h2>Компоненты</h2>
 
-    <p> Тип директивы с упрощенной конфигурацией для компонентного подхода к архитектуре приложения </p>
+        <p> Тип директивы с упрощенной конфигурацией для компонентного подхода к архитектуре приложения </p>
 
-    <p> Регистрируются с помощью метода <code>.component</code></p>
-<pre>
+        <p> Регистрируются с помощью метода <code>.component</code></p>
+        <pre>
 
       <code class="language-javascript line-numbers">
     angular.module('app').component('pokemonDetail', {
@@ -283,72 +281,70 @@ function dataService() {
 </pre>
 
 
-  </section>
-  <section class="slide" id="components2">
-    <h2>Компоненты и директивы</h2>
+    </section>
+    <section class="slide" id="components2">
+        <h2>Компоненты и директивы</h2>
 
-    <p> Подробнее о директивах и компонентах: </p>
+        <p> Подробнее о директивах и компонентах: </p>
 
-    <p> http://angular-doc.herokuapp.com/guide/directive</p>
+        <p> http://angular-doc.herokuapp.com/guide/directive</p>
 
-    <p> http://angular-doc.herokuapp.com/guide/component</p>
+        <p> http://angular-doc.herokuapp.com/guide/component</p>
 
-  </section>
+    </section>
 
 
-  <section class="slide" id="route7">
-    <h2>UIRouter vs ngRoute</h2>
+    <section class="slide" id="route7">
+        <h2>UIRouter vs ngRoute</h2>
 
-    <p> ngRoute - встроенный роутер (до 2013 часть core)</p>
+        <p> ngRoute - встроенный роутер (до 2013 часть core)</p>
 
-    <pre>
+        <pre>
       <code> $route / $routeProvider
      </code>
     </pre>
-    <p> UIRouter - сторонний модуль с более мощным функционалом</p>
+        <p> UIRouter - сторонний модуль с более мощным функционалом</p>
 
-    <pre>
+        <pre>
       <code> $state / $stateProvider
        & $urlRouterProvider
      </code>
     </pre>
 
 
-  </section>
+    </section>
 
-  <section class="slide" id="route8">
-    <h2>Вложенность</h2>
+    <section class="slide" id="route8">
+        <h2>Вложенность</h2>
 
-    <img style="width: 600px" src="i/robot-nesting-dolls.png" alt="">
+        <img style="width: 600px" src="i/robot-nesting-dolls.png" alt="">
 
-    <p>Приложения состоят из компонентов, которые состоят из компонентов и т.д.</p>
+        <p>Приложения состоят из компонентов, которые состоят из компонентов и т.д.</p>
 
-  </section>
+    </section>
 
-  <section class="slide" id="">
-    <h2>UI Router</h2>
+    <section class="slide" id="">
+        <h2>UI Router</h2>
 
-    <p>UI Router построен вокруг концепции состояний(state), а не url (route).</p>
+        <p>UI Router построен вокруг концепции состояний(state), а не url (route).</p>
 
-    <p>ngRoute: один вид на страницу</p>
+        <p>ngRoute: один вид на страницу</p>
 
-    <p>Состояния могут иметь соответствующие им url, а могут не иметь</p>
+        <p>Состояния могут иметь соответствующие им url, а могут не иметь</p>
 
-    <p>Состояния могут быть абстрактными</p>
-  </section>
+        <p>Состояния могут быть абстрактными</p>
+    </section>
 
-  <section class="slide" id="route9">
-    <pre>
+    <section class="slide" id="route9">
+        <pre>
       <code class="language-javascript line-numbers">
        $routeProvider
        .when("/home", {
        templateUrl : "main.html"
        })
      </code>
-    </pre>
-
-    vs
-    <pre>
+    </pre> vs
+        <pre>
       <code class="language-javascript line-numbers">
        $stateProvider
        .state('home', {
@@ -357,109 +353,106 @@ function dataService() {
        })
      </code>
     </pre>
-  </section>
+    </section>
 
-  <section class="slide" id="route10">
-    <h2>UI Router: навигация</h2>
-    <ol>
-      <li><code>$state.go()</code></li>
+    <section class="slide" id="route10">
+        <h2>UI Router: навигация</h2>
+        <ol>
+            <li><code>$state.go()</code></li>
 
-      <li>ссылка с директивой<code>ui-sref</code></li>
+            <li>ссылка с директивой<code>ui-sref</code></li>
 
-      <li>переход на location url, если определен</li>
-    </ol>
-  </section>
+            <li>переход на location url, если определен</li>
+        </ol>
+    </section>
 
-  <header class="slide" id="form0">
-    <h2>Формы</h2>
+    <header class="slide" id="form0">
+        <h2>Формы</h2>
 
-    <h1>ngModel, валидация</h1>
-  </header>
+        <h1>ngModel, валидация</h1>
+    </header>
 
-  <section class="slide" id="form1">
-    <h2>Формa</h2>
+    <section class="slide" id="form1">
+        <h2>Формa</h2>
 
-    <p>Коллекция элементов управления(controls) с целью группировки связанных элементов вместe</p>
+        <p>Коллекция элементов управления(controls) с целью группировки связанных элементов вместe</p>
 
-    <p>Обеспечивает валидацию сервисов, так что пользователь может быть уведомлен о некорректном вводе. Это улучшает пользовательский
-      опыт, так как пользователь получает мгновенную обратную связь о том, как исправить ошибку.</p>
-  </section>
+        <p>Обеспечивает валидацию сервисов, так что пользователь может быть уведомлен о некорректном вводе. Это улучшает пользовательский опыт, так как пользователь получает мгновенную обратную связь о том, как исправить ошибку.</p>
+    </section>
 
-  <section class="slide" id="form2">
-    <h2>ngModel</h2>
+    <section class="slide" id="form2">
+        <h2>ngModel</h2>
 
-    <p>Директива, без которой валидация не заработает. Эта директива ответственна за:
+        <p>Директива, без которой валидация не заработает. Эта директива ответственна за:
 
-      <ul>
-        <li>two-way binding между моделью и представлением (необходимо для элементов управления/директив input, textarea, select
-          и т.п.);
-        </li>
-        <li>сохранение состояния элемента управления (valid/invalid, dirty/pristine, ошибки валидации);</li>
-        <li>установка соответствующих классов для элементов (ng-valid, ng-invalid, ng-dirty, ng-pristine);</li>
-      </ul>
+            <ul>
+                <li>two-way binding между моделью и представлением (необходимо для элементов управления/директив input, textarea, select и т.п.);
+                </li>
+                <li>сохранение состояния элемента управления (valid/invalid, dirty/pristine, ошибки валидации);</li>
+                <li>установка соответствующих классов для элементов (ng-valid, ng-invalid, ng-dirty, ng-pristine);</li>
+            </ul>
 
-  </section>
+    </section>
 
-  <section class="slide" id="form3">
-    <h2>Состояние элементов</h2>
+    <section class="slide" id="form3">
+        <h2>Состояние элементов</h2>
 
-    <p>
-      Для предоставления возможности оформления форм так же, как и элементов управления, ngModel добавляется такие CSS классы:
-    </p>
-    <ul>
-      <li>.ng-valid / .ng-invalid
-        <li>.ng-pristine / .ng-dirty
-    </ul>
-  </section>
+        <p>
+            Для предоставления возможности оформления форм так же, как и элементов управления, ngModel добавляется такие CSS классы:
+        </p>
+        <ul>
+            <li>.ng-valid / .ng-invalid
+                <li>.ng-pristine / .ng-dirty
+        </ul>
+    </section>
 
-  <section class="slide" id="form4">
-    <h2>Состояние формы</h2>
+    <section class="slide" id="form4">
+        <h2>Состояние формы</h2>
 
-    <p>
-      Состояние формы зависит от всех зарегистрированных для нее элементов управления и вложенных форм. Форма будет валидна, если
-      валидны все включенные в нее элементы управления и формы.</p>
-    <ul>
-      <li>myForm.$invalid
-        <li>myForm.$error.required
-    </ul>
-  </section>
+        <p>
+            Состояние формы зависит от всех зарегистрированных для нее элементов управления и вложенных форм. Форма будет валидна, если валидны все включенные в нее элементы управления и формы.</p>
+        <ul>
+            <li>myForm.$invalid
+                <li>myForm.$error.required
+        </ul>
+    </section>
 
-  <header class="slide" id="ng0">
-    <h2>ngMessages</h2>
-    <h1></h1>
-  </header>
+    <header class="slide" id="ng0">
+        <h2>ngMessages</h2>
+        <h1></h1>
+    </header>
 
 
-  <section class="slide" id="ng1">
+    <section class="slide" id="ng1">
 
-    <h2>Подключение</h2>
+        <h2>Подключение</h2>
 
-    <pre>
+        <pre>
 <code class="language-javascript line-numbers">
 bower install angular-messages --save
 </code>
 </pre>
 
-<code class="language-html line-numbers">
+        <code class="language-html line-numbers">
   <xmp>
 <script src="./angular-messages.js"></script>
   </xmp>
 </code>
 
-<pre>
+        <pre>
 <code class="language-javascript line-numbers">
 angular.module('MyApp', ['ngMessages']);
 </code>
 </pre>
 
-  </section>
+    </section>
 
 
-  <section class="slide" id="ng4">
+    <section class="slide" id="ng4">
 
-    <h2>Использование</h2>
+        <h2>Использование</h2>
 
-    <code class="language-html line-numbers">
+        <code class="language-html line-numbers">
       <xmp>
 <div ng-messages="myForm.myField.$error">
 
@@ -470,19 +463,19 @@ angular.module('MyApp', ['ngMessages']);
       </xmp>
     </code>
 
-  </section>
+    </section>
 
-  <section class="slide" id="ng4">
+    <section class="slide" id="ng4">
 
-    <h2>Улучшаем UX</h2>
+        <h2>Улучшаем UX</h2>
 
-    <code class="language-html line-numbers">
+        <code class="language-html line-numbers">
       <xmp>
 <div ng-messages="..." ng-if="vm.myForm.myField.$dirty">
       </xmp>
     </code>
 
-    <pre>
+        <pre>
     <code class="language-javascript line-numbers">
       vm.formSubmit = function() {
           ...
@@ -491,64 +484,62 @@ angular.module('MyApp', ['ngMessages']);
     </code>
     </pre>
 
-  </section>
+    </section>
 
-  <section class="slide" id="homework">
-    <h2>Практика:</h2>
+    <section class="slide" id="homework">
+        <h2>Практика:</h2>
+        <p>
+            Вынести главное меню в контроллер и сделать подсветку текущего пункта;
 
-    <p>Добавить в форму вывод сообщений об ошибках</p>
+        </p>
 
-    <p>Доделать директиву перемены имени - сохранить значение, введенное пользователем, в контроллере, и вывести на экран. добавить
-      валидацию (произвольную).</p>
+        <p>Создать личный кабинет:</p>
 
-    <p>
-      Вынести главное меню в контроллер и сделать подсветку текущего пункта
-    </p>
 
-    <p>
-      (зачет с отличием) Добавить дочерний state в страницу деталей покемона, с возможностью редактирования. Вид должен активироваться
-      по нажатию кнопки c атрибутом ui-sref.
-    </p>
+        <p> Создать отдельный state с помощью ui-router, c url /myaccount</p>
+        <p> Создать там форму с полями имя (Обязательное), email (обязательное, типа email) и телефон (цифры и знак плюс)</p>
+        <p> Зачет с отличием - создать сервис по примеру shopping cart, сохраняющий данные из фомы, и отображающий их в личном кабинете, если данные заполнены, и форму, если данные не заполнены</p>
 
-  </section>
 
-  <section class="slide">
-    <h2>Как предоставить код домашней работы на проверку</h2>
+    </section>
 
-    <p>
-      Способы предоставить домашнее задание в порядке приоритета:
-    </p>
-    <ol>
-      <li>Исходный код на
-        <a href="https://bitbucket.org/">BitBucket</a> или
-        <a href="https://github.com/">GitHub</a>
-      </li>
-      <li>Код в
-        <a href="http://codepen.io/">CodePen</a> или
-        <a href="https://jsfiddle.net/">JSFiddle</a>
-      </li>
-    </ol>
-  </section>
+    <section class="slide">
+        <h2>Как предоставить код домашней работы на проверку</h2>
 
-  <section class="slide last">
-    <p class="thanx">Задавайте вопросы и напишите отзыв о лекции!</p>
-    <address>Екатерина Орлова</address>
-    <ul class="contacts">
-      <li>
-        <a href="mailto:ekaterina.orlova@gmail.com">
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>ekaterina.orlova@gmail.com</a>
-      </li>
-      <li>
-        <a href="skype:katerinaorlova?call">
-          <i class="fa fa-skype" aria-hidden="true"></i>katerinaorlova</a>
-      </li>
-    </ul>
-  </section>
+        <p>
+            Способы предоставить домашнее задание в порядке приоритета:
+        </p>
+        <ol>
+            <li>Исходный код на
+                <a href="https://bitbucket.org/">BitBucket</a> или
+                <a href="https://github.com/">GitHub</a>
+            </li>
+            <li>Код в
+                <a href="http://codepen.io/">CodePen</a> или
+                <a href="https://jsfiddle.net/">JSFiddle</a>
+            </li>
+        </ol>
+    </section>
 
-  <div class="progress"></div>
-  <script src="node_modules/shower-core/shower.min.js"></script>
-  <script src="js/prism.js?v=2"></script>
-  <script src="https://use.fontawesome.com/30b5a52164.js"></script>
+    <section class="slide last">
+        <p class="thanx">Задавайте вопросы и напишите отзыв о лекции!</p>
+        <address>Екатерина Орлова</address>
+        <ul class="contacts">
+            <li>
+                <a href="mailto:ekaterina.orlova@gmail.com">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>ekaterina.orlova@gmail.com</a>
+            </li>
+            <li>
+                <a href="skype:katerinaorlova?call">
+                    <i class="fa fa-skype" aria-hidden="true"></i>katerinaorlova</a>
+            </li>
+        </ul>
+    </section>
+
+    <div class="progress"></div>
+    <script src="node_modules/shower-core/shower.min.js"></script>
+    <script src="js/prism.js?v=2"></script>
+    <script src="https://use.fontawesome.com/30b5a52164.js"></script>
 </body>
 
 </html>
