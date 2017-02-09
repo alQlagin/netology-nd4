@@ -109,7 +109,7 @@
   <ul class="double">
     <li>Model - данные и методы работы с ними, БД</li>
     <li>View - отображение информации: UI, представление</li>
-    <li>Controller - связь между пользователем и системой, между Model и View</li>
+    <li>Controller - связь между Model и View</li>
     <li>Angular - MV*: Model-View-Whatever</li>
   </ul>
   <img src="i/240px-MVC-Process.png">
@@ -307,16 +307,21 @@
     Cхожа с ng-bind, устанавливает двустороннюю связь между view и model
   </p>
   <code>ng-class</code>
+  <code>ng-class="{'error': vm.invalid}"</code>
+
 
   <p>
     Динамическая загрузка и изменение атрибута class
   </p>
   <code>ng-controller</code>
+  <code> <aside ng-controller="MenuCtrl as vm"></aside></code>
 
   <p>
     Определяет JS controller class
   </p>
   <code>ng-repeat</code>
+  <code> ng-repeat="item in vm.getItems()"
+  </code>
 
   <p>Итерация по коллекции, вывод элементов списка (самая мощная директива angular?)
   </p>
@@ -326,14 +331,17 @@
 <section class="slide" id="directives4">
   <h2>Встроенные директивы</h2>
   <code>ng-click</code>
+  <code> data-ng-click="vm.fetch(vm.filters)"</code>
 
   <p>
     Клик-обработчик
   </p>
   <code>ng-show & ng-hide</code>
+  <code>data-ng-show="!vm.getTotal()"</code>
 
   <p>Отображение или скрытие элемента средствами CSS согласно условному выражению</p>
   <code>ng-if</code>
+  <code>data-ng-if="vm.items"</code>
 
   <p>
     Схоже с ng-show/ng-hide, но элемент убирается из DOM, а при повторном появлении вставляется клон заново
